@@ -25,5 +25,12 @@ interface Api {
                       @Field ("suburb") suburb : String
     ):Call<DefaultResponse>
 
+    @FormUrlEncoded
+    @POST("userlogin")
+
+    fun userlogin(
+        @Field("username") username: String,
+        @Field("passwordChoice") passwordChoice: String
+    ): Call<LoginResponseClass>
 
 }

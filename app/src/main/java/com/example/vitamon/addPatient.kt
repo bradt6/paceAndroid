@@ -96,11 +96,11 @@ class addPatient : AppCompatActivity(){
             return
         }
 
-//        if (streetNumber.isEmpty()) {
-//            streetNumberInput.error = "Enter a Valid Email"
-//            streetNumberInput.requestFocus()
-//            return
-//        }
+        if (streetNumber.isEmpty()) {
+            streetNumberInput.error = "Enter a Valid Email"
+            streetNumberInput.requestFocus()
+            return
+        }
 
         if (suburb.isEmpty()) {
             suburbInput.error = "Enter a Valid Email"
@@ -112,19 +112,14 @@ class addPatient : AppCompatActivity(){
             .enqueue(object : Callback<DefaultResponse>{
                 override fun onFailure(call: Call<DefaultResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                    print("HERE *****************************")
-                    print(t.message)
                 }
 
                 override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
-                    Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+
                 }
 
             })
-
-
-
-
     }
 
     fun submitOnClick(view: View) {
