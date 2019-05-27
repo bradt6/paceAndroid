@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<LoginResponseClass>, response: Response<LoginResponseClass>) {
+                println(response)
                 if (!response.body()?.error!!) {
 
                     SharedPrefManager.getInstance(applicationContext).saveUser(response.body()?.user!!)
