@@ -1,5 +1,6 @@
 package com.example.vitamon
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -116,7 +117,7 @@ class addPatient : AppCompatActivity(){
 
                 override fun onResponse(call: Call<DefaultResponse>, response: Response<DefaultResponse>) {
                         Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-
+                        addedSuccesfully()
                 }
 
             })
@@ -124,6 +125,13 @@ class addPatient : AppCompatActivity(){
 
     fun submitOnClick(view: View) {
         userSignUp()
+
+    }
+
+    fun addedSuccesfully() {
+        Thread.sleep(1000)
+        val myIntent = Intent(applicationContext, PatientHomeActivity::class.java)
+        startActivity(myIntent)
     }
 
 

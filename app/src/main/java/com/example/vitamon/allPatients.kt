@@ -1,3 +1,3 @@
 package com.example.vitamon
 
-data class allPatients (val error: Boolean, val users: List<PatientClass>)
+data class allPatients (val error: Boolean, val users: MutableList<PatientClass>)
