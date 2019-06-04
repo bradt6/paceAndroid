@@ -42,6 +42,7 @@ class DetailActivity : AppCompatActivity() {
 
         setupBarChartData()
         setupLineChartData()
+        setupLineChartData2()
 
     }
 
@@ -111,5 +112,46 @@ class DetailActivity : AppCompatActivity() {
         //lineChart.setDrawGridBackground()
         HRLineChart.xAxis.labelCount = 11
         HRLineChart.xAxis.position = XAxis.XAxisPosition.BOTTOM
+    }
+
+    private fun setupLineChartData2() {
+
+        val y02Vals = ArrayList<Entry>()
+
+        o2ListDataList.forEachIndexed { i, item ->
+            y02Vals.add(BarEntry(i.toFloat(), item.toFloat()))
+        }
+        val set1: LineDataSet
+        set1 = LineDataSet(y02Vals, "DataSet 1")
+
+        // set1.fillAlpha = 110
+        // set1.setFillColor(Color.RED);
+
+        // set the line to be drawn like this "- - - - - -"
+        // set1.enableDashedLine(5f, 5f, 0f);
+        // set1.enableDashedHighlightLine(10f, 5f, 0f);
+        set1.color = Color.GREEN
+        set1.setCircleColor(Color.GREEN)
+        set1.lineWidth = 1f
+        set1.circleRadius = 3f
+        set1.setDrawCircleHole(false)
+        set1.valueTextSize = 0f
+        set1.setDrawFilled(false)
+
+        val dataSets = ArrayList<ILineDataSet>()
+        dataSets.add(set1)
+        val data = LineData(dataSets)
+
+        // set data
+        trial.setData(data)
+        trial.description.isEnabled = false
+        trial.legend.isEnabled = false
+        trial.setPinchZoom(true)
+        trial.xAxis.enableGridDashedLine(5f, 5f, 0f)
+        trial.axisRight.enableGridDashedLine(5f, 5f, 0f)
+        trial.axisLeft.enableGridDashedLine(5f, 5f, 0f)
+        //lineChart.setDrawGridBackground()
+        trial.xAxis.labelCount = 11
+        trial   .xAxis.position = XAxis.XAxisPosition.BOTTOM
     }
 }
