@@ -34,12 +34,12 @@ class PatientHomeActivity : AppCompatActivity() {
         setContentView(R.layout.users_fragment)
 
         refreshLayout.setOnRefreshListener {
-            fetchMovies()
+            fetchPatients()
         }
-        fetchMovies()
+        fetchPatients()
     }
 
-    fun fetchMovies() {
+    fun fetchPatients() {
         refreshLayout.isRefreshing = true
 
         RetrofitClient.instance.getPatients().enqueue(object : Callback<allPatients> {
@@ -69,24 +69,6 @@ class PatientHomeActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.toolbar_menu, menu)
-
-//        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
-//        searchView = menu.findItem(R.id.search_action).actionView as SearchView
-//        searchView!!.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-//        searchView!!.maxWidth = Integer.MAX_VALUE
-//
-//        searchView!!.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                adapt!!.filter.filter(query)
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                adapt!!.filter.filter(newText)
-//                return false
-//            }
-//
-//        })
 
         return true
     }

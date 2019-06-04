@@ -27,7 +27,7 @@ class DetailActivity : AppCompatActivity() {
        val navbarTitle =  intent.getStringExtra("patient_First_Name")
         textView.text = navbarTitle
 
-        for (i in 0..48) {
+        for (i in 0..24) {
             heartRateDataList.add(Random.nextInt(60,150))
             tempDataList.add(Random.nextInt(25,32))
             o2ListDataList.add((Random.nextInt(500,600)))
@@ -46,20 +46,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupBarChartData() {
-        // create BarEntry for Bar Group
-        val bargroup = ArrayList<BarEntry>()
-        bargroup.add(BarEntry(0f, 30f, "0"))
-        bargroup.add(BarEntry(1f, 2f, "1"))
-        bargroup.add(BarEntry(2f, 4f, "2"))
-        bargroup.add(BarEntry(3f, 6f, "3"))
-        bargroup.add(BarEntry(4f, 8f, "4"))
-        bargroup.add(BarEntry(5f, 10f, "5"))
-        bargroup.add(BarEntry(6f, 22f, "6"))
-        bargroup.add(BarEntry(7f, 12.5f, "7"))
-        bargroup.add(BarEntry(8f, 22f, "8"))
-        bargroup.add(BarEntry(9f, 32f, "9"))
-        bargroup.add(BarEntry(10f, 54f, "10"))
-        bargroup.add(BarEntry(11f, 28f, "11"))
 
         val barGrouping = ArrayList<BarEntry>()
 
@@ -87,22 +73,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setupLineChartData() {
-//        val yVals = ArrayList<Entry>()
-//        yVals.add(Entry(0f, 30f, "0"))
-//        yVals.add(Entry(1f, 2f, "1"))
-//        yVals.add(Entry(2f, 4f, "2"))
-//        yVals.add(Entry(3f, 6f, "3"))
-//        yVals.add(Entry(4f, 8f, "4"))
-//        yVals.add(Entry(5f, 10f, "5"))
-//        yVals.add(Entry(6f, 22f, "6"))
-//        yVals.add(Entry(7f, 12.5f, "7"))
-//        yVals.add(Entry(8f, 22f, "8"))
-//        yVals.add(Entry(9f, 32f, "9"))
-//        yVals.add(Entry(10f, 54f, "10"))
-//        yVals.add(Entry(11f, 28f, "11"))
-//
-//        val set1: LineDataSet
-//        set1 = LineDataSet(yVals, "DataSet 1")
 
         val yHRVals = ArrayList<Entry>()
 

@@ -47,7 +47,7 @@ class RecyclerAdaptor (var patientList: MutableList<PatientClass>) : RecyclerVie
 //            Log.d("RecyclerView", "CLICK!!!!")
             val context = itemView.context
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("patient_First_Name", patient?.firstName)
+            intent.putExtra("patient_First_Name", "${patient?.firstName} ${patient?.lastName}")
             context.startActivity(intent)
         }
 
