@@ -18,31 +18,78 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
                 android:layout_marginTop="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
-                app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="8dp"
                 android:layout_marginStart="8dp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/HeartRateText"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                android:text="Heart Rate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
 
         <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/barChart"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                app:layout_constraintTop_toBottomOf="@id/textView">
+                app:layout_constraintTop_toBottomOf="@id/HeartRateText">
         </com.github.mikephil.charting.charts.BarChart>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/HeartRateText2"
+                app:layout_constraintTop_toBottomOf="@+id/barChart"
+                android:text="Heart Rate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
 
         <com.github.mikephil.charting.charts.LineChart
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                app:layout_constraintTop_toBottomOf="@id/barChart"
+                app:layout_constraintTop_toBottomOf="@id/HeartRateText2"
                 android:id="@+id/HRLineChart">
         </com.github.mikephil.charting.charts.LineChart>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Spo2"
+                app:layout_constraintTop_toBottomOf="@+id/HRLineChart"
+                android:text="Spo2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
 
         <com.github.mikephil.charting.charts.LineChart
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            app:layout_constraintTop_toBottomOf="@id/HRLineChart"
-            android:id="@+id/trial">
+            app:layout_constraintTop_toBottomOf="@id/Spo2"
+            android:id="@+id/sp02Line">
         </com.github.mikephil.charting.charts.LineChart>
+
+        <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/BloodPreasure"
+                app:layout_constraintTop_toBottomOf="@+id/sp02Line"
+                android:text="Blood Preasure"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        />
+
+        <com.github.mikephil.charting.charts.LineChart
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        app:layout_constraintTop_toBottomOf="@id/BloodPreasure"
+        android:id="@+id/bloodPLine">
+    </com.github.mikephil.charting.charts.LineChart>
 
     </android.support.constraint.ConstraintLayout>
 
